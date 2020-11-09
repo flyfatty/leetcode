@@ -17,12 +17,10 @@ class Solution:
                 res.append(path[1:])
             if depth > 4:
                 return
-
             for i in range(min(len(s), 3)):
                 num = s[:i + 1]
                 if i > 0 and num.startswith("0") or i > 1 and num >= "256":
                     continue
-
                 dfs(s[i + 1:], path + "." + num, depth + 1)
 
         dfs(s, "", 0)
